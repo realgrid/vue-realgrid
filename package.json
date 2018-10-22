@@ -1,0 +1,49 @@
+{
+  "name": "@realgrid/vue-realgrid",
+  "version": "0.1.7",
+  "description": "RealGrid JS Wraping Component for Vue.js",
+  "main": "dist/vue-realgrid.umd.js",
+  "module": "dist/vue-realgrid.esm.js",
+  "unpkg": "dist/vue-realgrid.min.js",
+  "browser": {
+    "./sfc": "src/vue-realgrid.vue"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "scripts": {
+    "publish": "npm run build & npm publish",
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-realgrid.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-realgrid.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-realgrid.min.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-plugin-vue": "^4.3.0",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realgrid/vue-realgrid.git"
+  },
+  "keywords": [
+    "realgrid",
+    "vue",
+    "js",
+    "vue-realgrid",
+    "realgridjs"
+  ],
+  "author": "support@realgrid.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realgrid/vue-realgrid/issues"
+  },
+  "homepage": "https://github.com/realgrid/vue-realgrid#readme"
+}

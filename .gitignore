@@ -1,0 +1,10 @@
+# NPM
+.DS_Store
+node_modules
+npm-debug.log
+
+# VS Code
+.vscode
+
+# Distribution
+dist
