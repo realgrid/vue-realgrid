@@ -1,24 +1,28 @@
-# vue-realgrid
+# Vue.Js 에서 RealGrid 사용하기
 
-`vue-realgrid`는 RealGrid Js 라이브러리를 Vue.js에서 사용하기 위한 Helper 패키지 입니다.
+## 개요
 
-## 목차
+본 문서는 Vue.Js에서 RealGrid를 사용하기 위한 가이드 입니다.
 
-- [RealGridJS 설치](realgridjs-설치)
-  - [sample `index.html`](sample-indexhtml)
-  - [sample `main.js` vue code](sample-mainjs-vue-code)
-- [RealGrid 컴포넌트 이용하기](realgrid-컴포넌트-이용하기)
+본 문서에는 `vue-realgrid` npm 패키지의 소스 코드를 포함 하고 있습니다. `vue-realgrid`는 RealGrid Js 라이브러리를 Vue.js에서 사용하기 위한 Helper 패키지 입니다. 본 소스 코드의 내용은 누구든 수정하여 사용하거나 재배포 할 수 있습니다.
+
+아래 목차에 따라 Vue.Js에서 RealGrid를 사용하는 방법을 배워보시기 바랍니다.
+
+- [RealGridJS 설치](#realgridjs-설치)
+  - [sample `index.html`](#sample-indexhtml)
+  - [sample `main.js` vue code](#sample-mainjs-vue-code)
+- [RealGrid 컴포넌트 이용하기](#realgrid-컴포넌트-이용하기)
 - 샘플코드
   - [sample 1](samples/sample1) : `script` 태그를 이용해 RelaGrid를 import 하고 Vue instance에서 RealGrid를 생성하는 방법을 알아 봅니다.
   - [sample 2](samples/sample2) : `vue-realgrid` 패키지를 설치하고 `RealGrid Vue Component`를 이용해 RealGrid를 생성하는 방법을 알아 봅니다.
 
-## RealGridJS 설치
+### RealGridJS 설치
 
 리얼그리드 도움말의 [RealGridJS 설치하기](http://help.realgrid.com/tutorial/a1/) 에 보면 RealGrid를 설치하는 방법이 정리되어 있습니다.
 
 Vue.js 에서 RealGrid를 사용하기 위해 동일한 방법으로 페이지에 `<script>` 태그를 사용하여 RealGrid 라이브러리 파일을 import 합니다.
 
-### sample `index.html`
+#### sample `index.html`
 
 ```html
 <!DOCTYPE html>
@@ -45,7 +49,7 @@ Vue.js 에서 RealGrid를 사용하기 위해 동일한 방법으로 페이지�
 
 아래 Vue 코드와 같이 `RealGridJS` 객체를 이용해 RealGrid를 직접 생성 할 수 있습니다. [sample1 참조](samples/sample1)
 
-### sample `main.js` vue code
+#### sample `main.js` vue code
 
 ``` js
 Vue.component('realgrid', {
@@ -73,7 +77,7 @@ var app = new Vue({
 });
 ```
 
-## RealGrid 컴포넌트 이용하기
+### RealGrid 컴포넌트 이용하기
 
 위와 같이 직접 RealGridJS 객체를 컨트롤 할 수도 있지만 편의를 위해 작성된 Vue.js 용 RealGrid Helper component 를 설치 하여 사용할 수도 있습니다.
 
