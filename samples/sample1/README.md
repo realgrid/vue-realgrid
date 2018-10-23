@@ -1,6 +1,6 @@
 # Vue RealGrid - sample 1
 
-## 목적
+## 개요
 
 - `script` 태그를 이용해 간단하게 설치하고 생성하는 방법을 테스트 해 본다.
 - [http-server](https://www.npmjs.com/package/http-server)와 같은 간단한 테스트용 웹서버를 이용해 실행한다.
