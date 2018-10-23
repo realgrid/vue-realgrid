@@ -1,10 +1,23 @@
 <template>
   <div id="app">
+    <div class="button-group">
+      <button @click="setFields">Set Fields</button>
+      <button @click="setColumns">Set Columns</button>
+      <button @click="addRow">Add Row</button>
+    </div>
+      
     <RealGrid grid-id="realgrid1"
       grid-root="/lib"
       @rendered="gridRendered"
       class="grid">
     </RealGrid>
+
+    <div v-show="messages.length > 0" class="message-box">
+      <h3>Event Messages</h3>
+      <p v-for="(msg, index) in messages" :key="index">
+        {{ msg }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -25,7 +38,16 @@ export default {
     },
     methods: {
     addMessage(msg) {
-        this.messages.push(`[${new Date()}] ${msg}`);
+        this.messages.push(`${msg}`);
+    },
+    // 행 추가 이벤트 처리
+    onRowInserted(provider, row) {
+        const values = provider.getRows(row);
+        this.addMessage(`[EVENT] onRowInserted <${values}>`);
+    },
+    // 셀 클릭 이벤트 처리
+    onDataCellClicked(grid, index) {
+        this.addMessage(`[EVENT] onDataCellClicked <${JSON.stringify(index)}>`)
     },
     // 그리드가 마운트 될때 매핑
     gridRendered(provider, view) {
@@ -35,10 +57,8 @@ export default {
         this.gridView = view;
 
         // 이벤트 처리
-        this.dataProvider.onRowInserted = (pv, row) => {
-        const values = pv.getRows(row);
-        this.addMessage(`ADD ROW <${values}>`);
-        }
+        this.dataProvider.onRowInserted = this.onRowInserted;
+        this.gridView.onDataCellClicked = this.onDataCellClicked;
     },
     setFields() {
         const fields = [
@@ -75,8 +95,8 @@ export default {
     addRow() {
         const rowCount = this.dataProvider.getRowCount();
         this.dataProvider.addRow({
-        field1: `Field1 Value:${rowCount}`,
-        field2: `Field2 Value:${rowCount}`,
+            field1: `Field1 Value:${rowCount}`,
+            field2: `Field2 Value:${rowCount}`,
         });
     },
     }
@@ -84,30 +104,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.grid {
+  margin-top: 10px;
 }
 
-h1, h2 {
-  font-weight: normal;
+.button-group {
+  margin: 10px 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.message-box {
+  line-height: 0.3em;
 }
 </style>

@@ -4,10 +4,10 @@
 
 ## 목차
 
-- [RealGridJS 설치]()
-  - [sample `index.html`]()
-  - [sample `main.js` vue code]()
-- [RealGrid 컴포넌트 이용하기]()
+- [RealGridJS 설치](realgridjs-설치)
+  - [sample `index.html`](sample-indexhtml)
+  - [sample `main.js` vue code](sample-mainjs-vue-code)
+- [RealGrid 컴포넌트 이용하기](realgrid-컴포넌트-이용하기)
 - 샘플코드
   - [sample 1](samples/sample1) : `script` 태그를 이용해 RelaGrid를 import 하고 Vue instance에서 RealGrid를 생성하는 방법을 알아 봅니다.
   - [sample 2](samples/sample2) : `vue-realgrid` 패키지를 설치하고 `RealGrid Vue Component`를 이용해 RealGrid를 생성하는 방법을 알아 봅니다.
@@ -80,5 +80,3 @@ var app = new Vue({
 ``` bash
 npm install --save @realgrid/vue-realgrid
 ```
-
-
