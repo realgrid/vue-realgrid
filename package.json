@@ -1,6 +1,6 @@
 {
   "name": "@realgrid/vue-realgrid",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "RealGrid JS Wraping Component for Vue.js",
   "main": "dist/vue-realgrid.umd.js",
   "module": "dist/vue-realgrid.esm.js",
