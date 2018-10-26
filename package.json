@@ -1,6 +1,6 @@
 {
   "name": "@realgrid/vue-realgrid",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "RealGrid JS Wraping Component for Vue.js",
   "main": "dist/vue-realgrid.umd.js",
   "module": "dist/vue-realgrid.esm.js",
@@ -13,7 +13,7 @@
     "src/*"
   ],
   "scripts": {
-    "publish": "npm run build & npm publish",
+    "pub": "npm run build & npm publish",
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-realgrid.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-realgrid.esm.js",
